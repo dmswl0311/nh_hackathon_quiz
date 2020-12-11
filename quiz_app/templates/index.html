@@ -1,3 +1,4 @@
+{% load static %}
 <html lang="ko">
 <style>
     @font-face {
@@ -65,16 +66,8 @@
         color: #feab3a;
     }
 
-    .bttn-danger {
-        color: #ff5964;
-    }
-
     .bttn-success {
         color: #28b78d;
-    }
-
-    .bttn-royal {
-        color: #bd2df5;
     }
 
     .bttn,
@@ -249,6 +242,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/img/favicon.ico" rel="shortcut icon" type="image/x-icon">
     <title>올리아이 금융 퀴즈</title>
     <style type="text/css">
         a {
@@ -259,19 +253,20 @@
 </head>
 
 <body bgcolor="d3e6ed">
-
     <center>
+        <img src="{% static 'img/a.png' %}" width="120px">
+        <br><br>
         <div class="T-font" style="font-size: 40px;">올리아이 금융퀴즈</div>
         <br><br>
     </center>
 
     <center>
-        <button class="bttn-fill bttn-md bttn-primary" style="width: 100%; height:35%;"><a href="{%url 'quiz'%}"
-                style="font-size: 45px; color: white;">단답식
-                퀴즈</a></button><br>
-        <button class="bttn-fill bttn-md bttn-primary" style="width: 100%; height:35%;"><a href="{%url 'ox_quiz'%}"
-                style="font-size: 45px; color: white;">OX 퀴즈
-                </a< /button>
+        <button class="bttn-fill bttn-md bttn-primary" style="width: 100%; height:35%;">
+            <a href="{%url 'quiz'%}" style="font-size: 45px; color: white;" class="N-font"><strong>단답식
+                    퀴즈</strong></a></button><br>
+        <button class="bttn-fill bttn-md bttn-primary" style="width: 100%; height:35%;">
+            <a href="{%url 'ox_quiz'%}" style="font-size: 45px; color: white;" class="N-font"><strong>OX 퀴즈
+                </strong></a></button>
     </center>
 </body>
 

@@ -201,6 +201,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/img/favicon.ico" rel="shortcut icon" type="image/x-icon">
     <title>결과화면</title>
 </head>
 
@@ -211,20 +212,20 @@
     </center>
     <div style="background-color: rgba(250, 250, 250, 0.856);">
         <center style=" border-style : solid; border-width : 15px; border-color: #0066b3;">
-            <h2 style="font-weight: bolder; margin-top: 20px;"><strong>{{flag}}</strong></h2>
+            <h2 style="font-weight: bolder; margin-top: 20px;" class="N-font"><strong>{{flag}}</strong></h2>
             {%if mean%}
-            <h2>정답: {{mean}}</h2>
+            <h2 class="N-font">정답: {{mean}}</h2>
             {%endif%}
 
-            <div>
+            <div class="N-font">
                 <form action="{%url 'quiz'%}">
-                    <button class="N-font bttn-jelly bttn-md bttn-primary"
+                    <button class="bttn-jelly bttn-md bttn-primary"
                         style="width: 12rem; height: 3rem; font-size: 1.5rem;">다음 문제</button>
                 </form>
             </div>
-            <div>
+            <div class="N-font">
                 <form action="{%url 'index'%}">
-                    <button class="N-font bttn-jelly bttn-md bttn-primary"
+                    <button class="bttn-jelly bttn-md bttn-primary"
                         style="width: 12rem; height: 3rem; font-size: 1.5rem;">메인으로</button>
                 </form>
             </div>
