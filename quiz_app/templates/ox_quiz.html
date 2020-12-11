@@ -1,0 +1,238 @@
+<html lang="ko">
+<style>
+    @font-face {
+        font-family: 'Jal_Onuel';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Jal_Onuel.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'NIXGONM-Vb';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONM-Vb.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'KOTRA_BOLD-Bold';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.1/KOTRA_BOLD-Bold.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    .Jal-font {
+        font-family: 'Jal_Onuel', sans-serif;
+        color: black;
+    }
+
+    .N-font {
+        font-family: 'NIXGONM-Vb', sans-serif;
+        color: black;
+    }
+
+    .K-font {
+        font-family: 'KOTRA_BOLD-Bold', sans-serif;
+        color: black;
+    }
+
+    .bttn-default {
+        color: #fff;
+    }
+
+    .bttn-primary,
+    .bttn,
+    .bttn-lg,
+    .bttn-md,
+    .bttn-sm,
+    .bttn-xs {
+        color: #0066b3;
+    }
+
+    .bttn,
+    .bttn-lg,
+    .bttn-md,
+    .bttn-sm,
+    .bttn-xs {
+        margin: 0;
+        padding: 0;
+        border-width: 0;
+        border-color: transparent;
+        background: transparent;
+        font-weight: 400;
+        cursor: pointer;
+        position: relative;
+    }
+
+    .bttn-lg {
+        padding: 8px 15px;
+        font-size: 24px;
+        font-family: inherit;
+    }
+
+    .bttn-md {
+        font-size: 20px;
+        font-family: inherit;
+        padding: 5px 12px;
+    }
+
+    .bttn-sm {
+        padding: 4px 10px;
+        font-size: 16px;
+        font-family: inherit;
+    }
+
+    .bttn-xs {
+        padding: 3px 8px;
+        font-size: 12px;
+        font-family: inherit;
+    }
+
+    .bttn-jelly {
+        margin: 0;
+        padding: 0;
+        border-width: 0;
+        border-color: transparent;
+        background: transparent;
+        font-weight: 400;
+        cursor: pointer;
+        position: relative;
+        font-size: 20px;
+        font-family: inherit;
+        padding: 5px 12px;
+        overflow: hidden;
+        border-radius: 20px;
+        background: #fff;
+        color: #0066b3;
+        -webkit-transition: all 0.2s cubic-bezier(0.02, 0.01, 0.47, 1);
+        transition: all 0.2s cubic-bezier(0.02, 0.01, 0.47, 1);
+    }
+
+    .bttn-jelly:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+        background: currentColor;
+        content: '';
+        z-index: -1;
+        opacity: 0;
+        -webkit-transition: all 0.2s cubic-bezier(0.02, 0.01, 0.47, 1);
+        transition: all 0.2s cubic-bezier(0.02, 0.01, 0.47, 1);
+        -webkit-transform: scale(0.2);
+        transform: scale(0.2);
+    }
+
+    .bttn-jelly:hover,
+    .bttn-jelly:focus {
+        box-shadow: 0 1px 8px rgba(58, 51, 53, 0.4);
+        -webkit-transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+        transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+
+    .bttn-jelly:hover:before,
+    .bttn-jelly:focus:before {
+        opacity: 0.15;
+        -webkit-transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+        transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    .bttn-jelly.bttn-xs {
+        padding: 3px 8px;
+        font-size: 12px;
+        font-family: inherit;
+    }
+
+    .bttn-jelly.bttn-xs:hover,
+    .bttn-jelly.bttn-xs:focus {
+        box-shadow: 0 1px 4px rgba(58, 51, 53, 0.4);
+    }
+
+    .bttn-jelly.bttn-sm {
+        padding: 4px 10px;
+        font-size: 16px;
+        font-family: inherit;
+    }
+
+    .bttn-jelly.bttn-sm:hover,
+    .bttn-jelly.bttn-sm:focus {
+        box-shadow: 0 1px 6px rgba(58, 51, 53, 0.4);
+    }
+
+    .bttn-jelly.bttn-md {
+        font-size: 20px;
+        font-family: inherit;
+        padding: 5px 12px;
+    }
+
+    .bttn-jelly.bttn-md:hover,
+    .bttn-jelly.bttn-md:focus {
+        box-shadow: 0 1px 8px rgba(58, 51, 53, 0.4);
+    }
+
+    .bttn-jelly.bttn-lg {
+        padding: 8px 15px;
+        font-size: 24px;
+        font-family: inherit;
+    }
+
+    .bttn-jelly.bttn-lg:hover,
+    .bttn-jelly.bttn-lg:focus {
+        box-shadow: 0 1px 10px rgba(58, 51, 53, 0.4);
+    }
+
+    .bttn-jelly.bttn-default {
+        background: #fff;
+        color: #0066b3;
+    }
+
+    .bttn-jelly.bttn-primary {
+        background: #0066b3;
+        color: #fff;
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OX 퀴즈</title>
+</head>
+
+<body bgcolor="d3e6ed">
+    <center>
+        <br>
+        <p class="K-font" style="font-size: 3rem;">OX 퀴즈</p>
+    </center>
+
+    <div style="background-color: rgba(250, 250, 250, 0.856);">
+        <center style=" border-style : solid; border-width : 15px; border-color: #0066b3;">
+            <p style="font-weight: bolder; margin-top: 20px; font-size: 1.5rem;"><strong>Q.
+                    {{ox_quiz.ox_question}}</strong></p>
+            <p>
+            <form action="{%url 'ox_result'%}" method="get" value="o" style="display: inline;">
+                <input type="hidden" value="{{ox_quiz.ox_answer}}" name="answer"></input>
+                <input type="hidden" value="{{ox_quiz.ex_answer}}" name="ex"></input>
+                <input type="submit" value="o" name="user_answer"
+                    style="width: 15rem; height: 3.8rem; font-size: 2.3rem;"
+                    class="N-font bttn-jelly bttn-md bttn-primary">
+            </form>
+            <br> <br>
+            <form action="{%url 'ox_result'%}" method="get" value="x" style="display: inline;">
+                <input type="hidden" value="{{ox_quiz.ox_answer}}" name="answer"></input>
+                <input type="hidden" value="{{ox_quiz.ex_answer}}" name="ex"></input>
+                <input type="submit" value="x" name="user_answer"
+                    style="width: 15rem; height: 3.8rem; font-size: 2.3rem;"
+                    class="N-font bttn-jelly bttn-md bttn-primary">
+            </form>
+            </p>
+        </center>
+    </div>
+</body>
+
+</html>

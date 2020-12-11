@@ -1,0 +1,280 @@
+<html lang="ko">
+{% load static %}
+<style>
+    @font-face {
+        font-family: 'Jal_Onuel';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Jal_Onuel.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'NIXGONM-Vb';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/NIXGONM-Vb.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'KOTRA_BOLD-Bold';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.1/KOTRA_BOLD-Bold.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'TmoneyRoundWindExtraBold';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/TmoneyRoundWindExtraBold.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    .Jal-font {
+        font-family: 'Jal_Onuel', sans-serif;
+        color: black;
+    }
+
+    .N-font {
+        font-family: 'NIXGONM-Vb', sans-serif;
+        color: black;
+    }
+
+    .K-font {
+        font-family: 'KOTRA_BOLD-Bold', sans-serif;
+        color: black;
+    }
+
+    .T-font {
+        font-family: 'TmoneyRoundWindExtraBold', sans-serif;
+        color: black;
+    }
+
+    .bttn-default {
+        color: #fff;
+    }
+
+    .bttn-primary,
+    .bttn,
+    .bttn-lg,
+    .bttn-md,
+    .bttn-sm,
+    .bttn-xs {
+        color: #0066b3;
+    }
+
+    .bttn-warning {
+        color: #feab3a;
+    }
+
+    .bttn-danger {
+        color: #ff5964;
+    }
+
+    .bttn-success {
+        color: #28b78d;
+    }
+
+    .bttn-royal {
+        color: #bd2df5;
+    }
+
+    .bttn,
+    .bttn-lg,
+    .bttn-md,
+    .bttn-sm,
+    .bttn-xs {
+        margin: 0;
+        padding: 0;
+        border-width: 0;
+        border-color: transparent;
+        background: transparent;
+        font-weight: 400;
+        cursor: pointer;
+        position: relative;
+    }
+
+    .bttn-lg {
+        padding: 8px 15px;
+        font-size: 24px;
+        font-family: inherit;
+    }
+
+    .bttn-md {
+        font-size: 20px;
+        font-family: inherit;
+        padding: 5px 12px;
+    }
+
+    .bttn-sm {
+        padding: 4px 10px;
+        font-size: 16px;
+        font-family: inherit;
+    }
+
+    .bttn-xs {
+        padding: 3px 8px;
+        font-size: 12px;
+        font-family: inherit;
+    }
+
+    .bttn-fill {
+        margin: 0;
+        padding: 0;
+        border-width: 0;
+        border-color: transparent;
+        background: transparent;
+        font-weight: 400;
+        cursor: pointer;
+        position: relative;
+        font-size: 20px;
+        font-family: inherit;
+        padding: 5px 12px;
+        z-index: 0;
+        border: none;
+        background: #fff;
+        color: #0066b3;
+        -webkit-transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+        transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+    }
+
+    .bttn-fill:before {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #0066b3;
+        content: '';
+        opacity: 0;
+        -webkit-transition: opacity 0.15s ease-out, -webkit-transform 0.15s ease-out;
+        transition: opacity 0.15s ease-out, -webkit-transform 0.15s ease-out;
+        transition: transform 0.15s ease-out, opacity 0.15s ease-out;
+        transition: transform 0.15s ease-out, opacity 0.15s ease-out, -webkit-transform 0.15s ease-out;
+        z-index: -1;
+        -webkit-transform: scaleX(0);
+        transform: scaleX(0);
+    }
+
+    .bttn-fill:hover,
+    .bttn-fill:focus {
+        box-shadow: 0 1px 8px rgba(58, 51, 53, 0.3);
+        color: #fff;
+        -webkit-transition: all 0.5s cubic-bezier(0.02, 0.01, 0.47, 1);
+        transition: all 0.5s cubic-bezier(0.02, 0.01, 0.47, 1);
+    }
+
+    .bttn-fill:hover:before,
+    .bttn-fill:focus:before {
+        opacity: 1;
+        -webkit-transition: opacity 0.2s ease-in, -webkit-transform 0.2s ease-in;
+        transition: opacity 0.2s ease-in, -webkit-transform 0.2s ease-in;
+        transition: transform 0.2s ease-in, opacity 0.2s ease-in;
+        transition: transform 0.2s ease-in, opacity 0.2s ease-in, -webkit-transform 0.2s ease-in;
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+    }
+
+    .bttn-fill.bttn-xs {
+        padding: 3px 8px;
+        font-size: 12px;
+        font-family: inherit;
+    }
+
+    .bttn-fill.bttn-xs:hover,
+    .bttn-fill.bttn-xs:focus {
+        box-shadow: 0 1px 4px rgba(58, 51, 53, 0.3);
+    }
+
+    .bttn-fill.bttn-sm {
+        padding: 4px 10px;
+        font-size: 16px;
+        font-family: inherit;
+    }
+
+    .bttn-fill.bttn-sm:hover,
+    .bttn-fill.bttn-sm:focus {
+        box-shadow: 0 1px 6px rgba(58, 51, 53, 0.3);
+    }
+
+    .bttn-fill.bttn-md {
+        font-size: 20px;
+        font-family: inherit;
+        padding: 5px 12px;
+    }
+
+    .bttn-fill.bttn-md:hover,
+    .bttn-fill.bttn-md:focus {
+        box-shadow: 0 1px 8px rgba(58, 51, 53, 0.3);
+    }
+
+    .bttn-fill.bttn-lg {
+        padding: 8px 15px;
+        font-size: 24px;
+        font-family: inherit;
+    }
+
+    .bttn-fill.bttn-lg:hover,
+    .bttn-fill.bttn-lg:focus {
+        box-shadow: 0 1px 10px rgba(58, 51, 53, 0.3);
+    }
+
+    .bttn-fill.bttn-default {
+        background: #fff;
+        color: #0066b3;
+    }
+
+    .bttn-fill.bttn-default:hover,
+    .bttn-fill.bttn-default:focus {
+        color: #fff;
+    }
+
+    .bttn-fill.bttn-default:before {
+        background: #0066b3;
+    }
+
+    .bttn-fill.bttn-primary {
+        background: #0066b3;
+        color: #fff;
+    }
+
+    .bttn-fill.bttn-primary:hover,
+    .bttn-fill.bttn-primary:focus {
+        color: #0066b3;
+    }
+
+    .bttn-fill.bttn-primary:before {
+        background: #56bd4d;
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>올리아이 금융 퀴즈</title>
+    <style type="text/css">
+        a {
+            text-decoration: none
+        }
+    </style>
+
+</head>
+
+<body bgcolor="d3e6ed">
+
+    <center>
+        <img src="{% static 'admin/img/a.png' %}" alt="올리" width="100px" align="middle">
+        <div class="T-font" style="font-size: 40px;">올리아이 금융퀴즈</div>
+        <br><br>
+    </center>
+
+    <center>
+        <button class="bttn-fill bttn-md bttn-primary" style="width: 100%; height:35%;"><a href="{%url 'quiz'%}"
+                style="font-size: 45px; color: white;">단답식
+                퀴즈</a></button><br>
+        <button class="bttn-fill bttn-md bttn-primary" style="width: 100%; height:35%;"><a href="{%url 'ox_quiz'%}"
+                style="font-size: 45px; color: white;">OX 퀴즈
+                </a< /button>
+    </center>
+</body>
+
+</html>
